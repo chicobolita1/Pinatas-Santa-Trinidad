@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piñatas Santa Trinidad</title>
+    <style>
+        body {
+            background-color: #009975;
+            margin: 0;
+            font-family: Algerian, sans-serif;
+        }
+        .centrado {
+            text-align: center;
+        }
+        .logo {
+            position: relative;
+            width: 400px; /* Ajuste de tamaño para hacerlo más cuadrado */
+            height: 200px;
+            margin: auto; /* Esto centra el logo */
+        }
+        .letras-contenedor {
+            position: relative; /* Necesario para mover el contenedor */
+            left: 50px; /* Puedes ajustar este valor para mover las letras */
+        }
+        .letra {
+            position: absolute;
+            font-size: 200px;
+            color: #FFD700;
+            -webkit-text-stroke: 3px #000000; 
+            text-shadow: 
+                0 0 15px #FFD700,
+                0 0 25px #FFD700,
+                0 0 35px #FFD700,
+                0 0 45px #FFD700,
+                -4px -4px 0 #000000,
+                4px -4px 0 #000000,
+                -4px 4px 0 #000000,
+                4px 4px 0 #000000;
+        }
+        .P {
+            top: 0;
+            left: -10px;
+            z-index: 1; 
+        }
+        .S {
+            top: 30px;
+            left: 80px;
+            z-index: 2; 
+        }
+        .T {
+            top: 0;
+            left: 160px;
+            z-index: 1; 
+        }
+        .letra:hover {
+            animation: destello 1.5s infinite alternate;
+        }
+        @keyframes destello {
+            0% {
+                text-shadow: 
+                    0 0 5px #FFD700, 
+                    0 0 10px #FFD700, 
+                    0 0 20px #FF8C00, 
+                    0 0 30px #FF8C00, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+            100% {
+                text-shadow: 
+                    0 0 10px #FFD700, 
+                    0 0 20px #FFD700, 
+                    0 0 30px #FF8C00, 
+                    0 0 40px #FF8C00, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+        }
+        h1 {
+            color: #FFD700;
+            animation: cambioSombra 2s infinite alternate;
+            margin-top: 50px; /* Baja más el título */
+        }
+        @keyframes cambioSombra {
+            0% {
+                text-shadow: 
+                    0 0 5px #FFD700, 
+                    0 0 10px #FFD700, 
+                    0 0 15px #FF8C00, 
+                    0 0 20px #FF8C00, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+            25% {
+                text-shadow: 
+                    0 0 5px #FF00FF, 
+                    0 0 10px #FF00FF, 
+                    0 0 15px #FF0000, 
+                    0 0 20px #FF0000, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+            50% {
+                text-shadow: 
+                    0 0 5px #00FFFF, 
+                    0 0 10px #00FFFF, 
+                    0 0 15px #0000FF, 
+                    0 0 20px #0000FF, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+            75% {
+                text-shadow: 
+                    0 0 5px #32CD32, 
+                    0 0 10px #32CD32, 
+                    0 0 15px #228B22, 
+                    0 0 20px #228B22, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+            100% {
+                text-shadow: 
+                    0 0 5px #FFD700, 
+                    0 0 10px #FFD700, 
+                    0 0 15px #FF8C00, 
+                    0 0 20px #FF8C00, 
+                    -1px -1px 0 #000, 
+                    1px -1px 0 #000, 
+                    -1px 1px 0 #000, 
+                    1px 1px 0 #000;
+            }
+        }
+        h2, h3 {
+            color: #800080;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .navbar{
+            background-color: #FFD700;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo-name {
+            font-size: 24px;
+            color: #2F2F2F;
+            font-weight: bold;
+        }
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .navbar .buttons button {
+            background-color: #800080;
+            color: white;
+            padding: 8px 16px;
+        }
+        .navbar .buttons button:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Estilo para los botones de las redes sociales */
+        .redes-container {
+            display: flex; /* Alinea los botones en fila */
+            justify-content: center; /* Centra los botones */
+            gap: 20px; /* Separa los botones con un espacio de 20px */
+            margin-top: 40px; /* Baja aún más los botones */
+        }
+
+        .redes-container a {
+            font-size: 18px;
+            color: white;
+            background-color: #18191f;
+            border-radius: 29px;
+            padding: 10px 20px;
+            text-decoration: none;
+            box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #0000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Estilos de hover para los botones de las redes sociales */
+        .redes-container a:hover {
+            background-color: #0072ff;
+            box-shadow: 0 0 20px #0072ff;
+        }
+
+        .redes-container a#facebook:hover {
+            background-color: #000080;
+            box-shadow: 0 0 20px #000080;
+        }
+
+        .redes-container a#instagram:hover {
+            background-color: #FF00FF;
+            box-shadow: 0 0 20px #FF00FF;
+        }
+
+        .redes-container a#youtube:hover {
+            background-color: #FF0000;
+            box-shadow: 0 0 20px #FF0000;
+        }
+
+        /* Estilo para el contenedor de "Acerca de nosotros" */
+        .acerca-container {
+            width: 300px; /* Ajustar al mismo tamaño que el logo */
+            height: 180px; /* Modificar tamaño del cuadro */
+            padding: 20px; /* Añadir padding */
+            background-color: #fff; /* Fondo blanco */
+            color: #000; /* Texto negro */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 1.2); /* Sombra sutil */
+            display: flex;
+            flex-direction: column; /* Disposición en columna */
+            justify-content: space-between; /* Espacio entre los elementos */
+            text-align: center;
+            margin: 0 auto; /* Centra el contenedor */
+            margin-top: 50px; /* Baja más el contenedor */
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="logo-name">Piñatas Santa Trinidad</div>
+    </div>
+
+    <!-- Logo de letras centrado -->
+    <div class="logo">
+        <div class="letras-contenedor">
+            <span class="letra P">P</span>
+            <span class="letra S">S</span>
+            <span class="letra T">T</span>
+        </div>
+    </div>
+
+    <h1 class="centrado" style="color: #000080;">SIGUENOS EN NUESTRAS REDES SOCIALES</h1>
+    <!-- Contenedor "Síguenos en" alineado a la derecha -->
+    <div class="redes-container">
+        <a href="https://www.tiktok.com/@santatrinidad6" target="_blank" id="tiktok">TikTok</a>
+        <a href="https://www.facebook.com/share/18BeZV7tiA/" target="_blank" id="facebook">Facebook</a>
+        <a href="https://www.instagram.com/pinatassantatrinidad469/profilecard/?igsh=MWh0Nnc3ZmdqMGcwYg==" target="_blank" id="instagram">Instagram</a>
+        <a href="https://www.youtube.com/watch?v=aLdyXniXQcf" target="_blank" id="youtube">YouTube</a>
+    </div>
+
+    <!-- Sección de "Acerca de nosotros" -->
+    <div class="acerca-container">
+        <h2>Acerca de nosotros</h2>
+        <p>Somos un negocio de piñatas en Córdoba Veracruz, dedicado a la creación de piñatas personalizadas, tradicionales y como sea tu gusto.</p>
+    </div>
+
+</body>
+</html>
+
+
+<!--programa terminado por el momento -->
